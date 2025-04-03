@@ -1,9 +1,6 @@
-// filepath: c:\Users\HF\Desktop\backend\accounts\refresh-token.model.js
 const { DataTypes } = require('sequelize');
 
-module.exports = model;
-
-function model(sequelize) {
+module.exports = (sequelize) => {
     const attributes = {
         token: { type: DataTypes.STRING },
         expires: { type: DataTypes.DATE },
@@ -23,9 +20,8 @@ function model(sequelize) {
     };
 
     const options = {
-        // disable default timestamp fields (createdAt and updatedAt)
         timestamps: false
     };
 
-    return sequelize.define('refreshToken', attributes, options);
-}
+    return sequelize.define('RefreshToken', attributes, options);
+};
