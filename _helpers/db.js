@@ -43,6 +43,7 @@ async function initialize() {
     db.Employee = require('../employees/employee.model')(sequelize);
     db.Department = require('../departments/department.model')(sequelize);
     db.Workflow = require('../workflows/workflow.model')(sequelize);
+    db.Request = require('../requests/request.model')(sequelize);
 
     // define relationships
     db.Account.hasMany(db.RefreshToken, { onDelete: 'CASCADE' });
